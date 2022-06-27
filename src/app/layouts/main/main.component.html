@@ -1,0 +1,6 @@
+<div class="container" [class.is-mobile]="mobileQuery.matches">
+  <app-topbar [isMobile]="mobileQuery.matches"></app-topbar>
+  <app-sidenav [isMobile]="mobileQuery.matches">
+    <router-outlet></router-outlet>
+  </app-sidenav>
+</div>
