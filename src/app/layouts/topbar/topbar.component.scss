@@ -1,0 +1,7 @@
+h2.app-name { margin-left: 8px; }
+
+@media (max-width: 768px) {
+  .mat-toolbar-row, .mat-toolbar-single-row {
+      height: 56px;
+  }
+}

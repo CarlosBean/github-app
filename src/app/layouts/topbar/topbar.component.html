@@ -1,0 +1,10 @@
+<mat-toolbar color="primary" class="toolbar">
+  <button 
+    *ngIf="isMobile"
+    mat-icon-button 
+    (click)="sidenav.listener.next($event)">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <h2 class="app-name">Github Application</h2>
+</mat-toolbar>
