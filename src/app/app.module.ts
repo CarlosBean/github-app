@@ -8,6 +8,7 @@ import { SidenavComponent } from './layouts/sidenav/sidenav.component';
 import { MaterialModule } from './material.module';
 import { TopbarComponent } from './layouts/topbar/topbar.component';
 import { MainComponent } from './layouts/main/main.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MainComponent } from './layouts/main/main.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
