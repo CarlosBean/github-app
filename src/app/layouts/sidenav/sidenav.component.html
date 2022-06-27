@@ -1,0 +1,18 @@
+<mat-sidenav-container 
+  class="sidenav-container"                     
+>
+  <mat-sidenav 
+    #snav
+    [opened]="!isMobile"
+    [mode]="isMobile ? 'over' : 'side'"
+    [fixedInViewport]="true" 
+    [fixedTopGap]="isMobile ? 56 : 64"
+  >
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="nav.path"  *ngFor="let nav of sidenavService.navList">
+        <mat-icon class="icon-list-item">{{ nav.icon }}</mat-icon>
+        {{ nav.label }}
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>
