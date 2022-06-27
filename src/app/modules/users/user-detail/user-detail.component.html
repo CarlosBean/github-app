@@ -30,7 +30,16 @@
       </mat-card-content>
     </div>  
     <div class="card-chart">
-      CHART
+      <ngx-charts-bar-vertical
+        [results]="results"
+        [gradient]="false"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="false"
+        [showXAxisLabel]="false"
+        [showYAxisLabel]="false"
+      >
+      </ngx-charts-bar-vertical>
     </div>
   </mat-card>
 </ng-container>

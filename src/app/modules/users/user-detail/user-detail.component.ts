@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { IUser } from '../user.model';
 import { UsersService } from '../users.service';
 
@@ -10,6 +10,7 @@ import { UsersService } from '../users.service';
 })
 export class UserDetailComponent implements OnInit {
   user: IUser;
+  results: any[];
 
   constructor(
     private userService: UsersService, 
@@ -21,6 +22,11 @@ export class UserDetailComponent implements OnInit {
     if (id) {
       this.userService.getDetail(id).subscribe(res => {
         this.user = res;
+        this.results = [
+          { name: 'Seguidores', value: res.followers },
+          { name: 'Siguiendo', value: res.following },
+          { name: 'Repositorios', value: res.public_repos },
+        ];
       });
     }
   }

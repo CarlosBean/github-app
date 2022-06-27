@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { userRoutes } from './user.routes';
 import { MaterialModule } from 'src/app/material.module';
 import { FormsModule } from '@angular/forms';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     MaterialModule,
     RouterModule.forChild(userRoutes),
-    FormsModule
+    FormsModule,
+    NgxChartsModule
   ]
 })
 export class UsersModule { }
