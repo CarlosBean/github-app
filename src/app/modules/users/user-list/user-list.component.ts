@@ -35,12 +35,12 @@ export class UserListComponent {
     });
   }
 
-  goToDetail(id: number | undefined) {
+  goToDetail(id: string | undefined) {
     if (!id) {
       this.snackBar.open('No es posible ver el detalle de este usuario.', 'Error');
       return;
     }
 
-    this.router.navigate([`/users/${id}`]);
+    this.router.navigate([`/users/${id}/view`]);
   }
 }

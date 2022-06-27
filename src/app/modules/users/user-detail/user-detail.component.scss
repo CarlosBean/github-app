@@ -1,0 +1,39 @@
+.user-card {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.card-info, .card-chart {
+  flex: 1;
+}
+
+.slug-container {
+  display: flex;
+  column-gap: 15px;
+}
+
+.card-slug {
+  background-color: #bfc9ff;
+  border-radius: 4px;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+.card-slug .slug-title {
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.card-slug .slug-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media (max-width: 1200px) {
+  .card-info, .card-chart {
+    flex-basis: 100%;
+  }
+}

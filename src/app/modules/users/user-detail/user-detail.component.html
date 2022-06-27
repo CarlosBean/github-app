@@ -1,0 +1,36 @@
+<ng-container *ngIf="user">
+  <mat-card class="user-card">
+    <div class="card-info">
+      <img mat-card-md-image mat-card-avatar [src]="user.avatar_url" >
+      <mat-card-title-group>
+        <mat-card-title>{{ user.name }}</mat-card-title>
+        <mat-card-subtitle>@{{ user.login }}</mat-card-subtitle>
+      </mat-card-title-group>
+      <mat-card-content>
+        <p>{{ user.location }}</p>
+        <p>{{ user.bio }}</p>
+        <p>
+          <span>Miembro desde:</span>
+          {{ user.created_at | date }}
+        </p>
+        <div class="slug-container">
+          <div class="card-slug">
+            <span class="slug-title">{{ user.followers }}</span>
+            <span class="slug-subtitle">Seguidores</span>
+          </div>
+          <div class="card-slug">
+            <span class="slug-title">{{ user.following }}</span>
+            <span class="slug-subtitle">Siguiendo</span>
+          </div>
+          <div class="card-slug">
+            <span class="slug-title">{{ user.public_repos }}</span>
+            <span class="slug-subtitle">Repositorios</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </div>  
+    <div class="card-chart">
+      CHART
+    </div>
+  </mat-card>
+</ng-container>
