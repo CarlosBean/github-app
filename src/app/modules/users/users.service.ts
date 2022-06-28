@@ -24,7 +24,7 @@ export class UsersService {
       map(res => res.items.map(mapper)),
       mergeAll(),
       mergeMap(
-        (data: any) => this.http.get(`${data.repos_url}?per_page=10`).pipe(
+        (data: any) => this.http.get(`${data.repos_url}?per_page=5`).pipe(
           map((repos: any) => ({ ...data, repos: repos.map((x: any) => x.name).join(', ') }))
         )),
       toArray(),

@@ -19,7 +19,7 @@
   <mat-card 
     class="user-card" 
     *ngFor="let item of (results | slice: 0 : 10)" 
-    [matTooltip]="item.repos"
+    [matTooltip]="'Repositorios: ' + item.repos"
   >
     <div class="card-image-container">
       <img mat-card-md-image mat-card-avatar [src]="item.avatar_url" >
