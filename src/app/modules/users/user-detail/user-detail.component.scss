@@ -10,7 +10,8 @@
 
 .slug-container {
   display: flex;
-  column-gap: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .card-slug {
@@ -39,5 +40,20 @@
 @media (max-width: 1200px) {
   .card-info, .card-chart {
     flex-basis: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .user-card, .user-card > * {
+    text-align: center;
+    justify-content: center;
+  }  
+
+  .slug-container {
+    justify-content: center;
+  }
+
+  .card-group-title {
+    justify-content: center;
   }
 }
