@@ -14,6 +14,7 @@ export class UserListComponent implements OnDestroy {
   value = '';
   results: IUser[] = [];
   subscription: Subscription;
+  showHelpText = false;
 
   constructor(
     private userService: UsersService, 

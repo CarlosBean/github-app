@@ -5,24 +5,19 @@
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
-  <button 
-    mat-raised-button
-    color="primary" 
-    aria-label="Search"
-    (click)="searchUser()"
-  >
+  <button mat-raised-button color="primary" aria-label="Search" (click)="searchUser()">
     BUSCAR
   </button>
+  <div class="help-text" *ngIf="showHelpText">
+    <span>Puedes iniciar colocando el nombre de usuario.</span>
+  </div>
 </div>
 
-<div class="grid-container">
-  <mat-card 
-    class="user-card" 
-    *ngFor="let item of (results | slice: 0 : 10)" 
-    [matTooltip]="'Repositorios: ' + item.repos"
-  >
+<div class="grid-container" *ngIf="results.length">
+  <mat-card class="user-card" *ngFor="let item of (results | slice: 0 : 10)"
+    [matTooltip]="'Repositorios: ' + item.repos">
     <div class="card-image-container">
-      <img mat-card-md-image mat-card-avatar [src]="item.avatar_url" >
+      <img mat-card-md-image mat-card-avatar [src]="item.avatar_url">
     </div>
     <mat-card-title-group>
       <mat-card-subtitle class="card-title">@{{ item.login }}</mat-card-subtitle>
@@ -32,4 +27,15 @@
       <button mat-button color="primary" (click)="goToDetail(item.login)">Más Info</button>
     </mat-card-actions>
   </mat-card>
+</div>
+
+<div 
+  class="initial-message" 
+  *ngIf="!results.length" 
+  (mouseover)="showHelpText = true" 
+  (mouseout)="showHelpText = false"
+>
+  <img width="300" src="../../../../assets/images/search_illustration.svg" alt="">
+  <h2>Comienza tu búsqueda!</h2>
+  <!-- <h2>Puedes iniciar escribiendo en el campo de arriba</h2> -->
 </div>
