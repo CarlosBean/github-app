@@ -7,6 +7,7 @@
     [mode]="isMobile ? 'over' : 'side'"
     [fixedInViewport]="true" 
     [fixedTopGap]="isMobile ? 56 : 64"
+    class="sidenav"
   >
     <mat-nav-list>
       <a mat-list-item [routerLink]="nav.path"  *ngFor="let nav of sidenavService.navList">
