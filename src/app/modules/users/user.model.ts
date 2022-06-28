@@ -32,6 +32,7 @@ export interface IUser {
   created_at?: Date;
   updated_at?: Date;
   score?: number;
+  repos?: any;
 }
 
 export interface IUserQuery {
