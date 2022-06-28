@@ -32,10 +32,13 @@
 <div 
   class="initial-message" 
   *ngIf="!results.length" 
-  (mouseover)="showHelpText = true" 
-  (mouseout)="showHelpText = false"
 >
-  <img width="300" src="../../../../assets/images/search_illustration.svg" alt="">
+  <img 
+    width="300" 
+    src="../../../../assets/images/search_illustration.svg" 
+    alt=""
+    (mouseover)="showHelpText = true" 
+    (mouseout)="showHelpText = false"
+  >
   <h2>Comienza tu búsqueda!</h2>
-  <!-- <h2>Puedes iniciar escribiendo en el campo de arriba</h2> -->
 </div>
