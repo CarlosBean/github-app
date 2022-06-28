@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { IUser } from '../user.model';
 import { UsersService } from '../users.service';
 
@@ -9,9 +10,10 @@ import { UsersService } from '../users.service';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
-export class UserListComponent {
+export class UserListComponent implements OnDestroy {
   value = '';
   results: IUser[] = [];
+  subscription: Subscription;
 
   constructor(
     private userService: UsersService, 
@@ -30,7 +32,7 @@ export class UserListComponent {
       return;
     }
 
-    this.userService.search(this.value).subscribe(res => {
+    this.subscription = this.userService.search(this.value).subscribe(res => {
       this.results = res;
     });
   }
@@ -42,5 +44,9 @@ export class UserListComponent {
     }
 
     this.router.navigate([`/users/${id}/view`]);
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
