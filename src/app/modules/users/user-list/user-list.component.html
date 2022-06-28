@@ -1,5 +1,5 @@
-<div>
-  <mat-form-field class="example-form-field" appearance="standard">
+<div class="search-container">
+  <mat-form-field class="form-field" appearance="standard">
     <input matInput type="text" [(ngModel)]="value" placeholder="Nombre de usuario">
     <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
       <mat-icon>close</mat-icon>
@@ -9,7 +9,7 @@
     BUSCAR
   </button>
   <div class="help-text" *ngIf="showHelpText">
-    <span>Puedes iniciar colocando el nombre de usuario.</span>
+    <span>Puedes comenzar buscando un usuario de github.</span>
   </div>
 </div>
 
