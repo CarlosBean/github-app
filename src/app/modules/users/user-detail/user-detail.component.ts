@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IUser } from '../user.model';
@@ -16,7 +17,8 @@ export class UserDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private userService: UsersService, 
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar,
   ) {}
 
   ngOnInit(): void {
@@ -29,6 +31,8 @@ export class UserDetailComponent implements OnInit, OnDestroy {
           { name: 'Siguiendo', value: res.following },
           { name: 'Repositorios', value: res.public_repos },
         ];
+      }, err => {
+        this.snackBar.open(err.error.message, 'Error');
       });
     }
   }

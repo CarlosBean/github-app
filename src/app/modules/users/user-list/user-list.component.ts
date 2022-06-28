@@ -34,6 +34,8 @@ export class UserListComponent implements OnDestroy {
 
     this.subscription = this.userService.search(this.value).subscribe(res => {
       this.results = res;
+    }, err => {
+      this.snackBar.open(err.error.message, 'Error');
     });
   }
 
