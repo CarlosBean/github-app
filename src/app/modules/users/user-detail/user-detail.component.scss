@@ -37,6 +37,18 @@
   display: flex;
 }
 
+.card-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px;
+  box-shadow: none;
+}
+
+.card-info {
+  position: relative;
+}
+
 @media (max-width: 1200px) {
   .card-info, .card-chart {
     flex-basis: 100%;

@@ -37,6 +37,10 @@ export class UserDetailComponent implements OnInit, OnDestroy {
     }
   }
 
+  goBack() {
+    window.history.back();
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
